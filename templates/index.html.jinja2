@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+</head>
+<body>
+    <h1>留言板</h1>
+    <h2>所有留言：</h2>
+    <ul>
+        {% for message in messages %}
+        <li>{{ message.text }} - {{ message.timestamp }}</li>
+        {% endfor %}
+    </ul>
+    <h2>添加新留言：</h2>
+    <form method="POST" action="/post/add/">
+        <label for="message">留言内容：</label>
+        <input type="text" id="message" name="message">
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>
